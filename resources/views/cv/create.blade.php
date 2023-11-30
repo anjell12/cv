@@ -5,14 +5,21 @@
             color: white;
         }
 
+        #card1,
+        #card2,
+        #card3,
+        #card4,
+        #card5 {
+            border-radius: 20px 100px 20px 100px;
+        }
+
         .card {
             display: none;
-            backdrop-filter: blur(15px) opacity(0.8);
+            backdrop-filter: blur(3px);
             background: transparent;
             border: 2px solid rgba(257, 257, 257, 0.4);
-            border-radius: 24px;
-            backdrop-filter: blur(15px) opacity(0.8);
             box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            overflow: hidden;
         }
 
         .card-header {
@@ -36,10 +43,16 @@
 
         .transparent-input {
             background-color: transparent;
-            border: 1px solid #ccc;
+            border: 2px solid rgba(257, 257, 257, 0.4);
             color: white;
             padding: 8px;
             opacity: 0.7;
+            border-radius: 24px;
+
+        }
+
+        .transparent-input:hover {
+            border-color: white;
         }
 
         .transparent-input::placeholder {
@@ -48,39 +61,34 @@
 
         .transparent-select {
             background-color: transparent;
-            /* Mengatur latar belakang elemen select menjadi transparan */
-            border: 1px solid #ccc;
-            /* Menambahkan garis batas agar terlihat */
+            border: 2px solid rgba(257, 257, 257, 0.4);
             color: white;
-            /* Mengatur warna teks pada elemen select */
             padding: 8px;
-            /* Menambahkan padding agar elemen select terlihat lebih baik */
+            opacity: 0.7;
+            border-radius: 24px;
+
         }
 
-        /* Style tambahan untuk menunjukkan elemen select saat dihover */
         .transparent-select:hover {
-            border-color: #666;
-            /* Mengubah warna garis batas saat dihover */
+            border-color: white;
         }
 
-        /* Mengatur warna teks opsi pada elemen select */
         .transparent-select option {
             color: black;
-            /* Ganti dengan warna yang diinginkan untuk teks opsi */
         }
 
         .custom-date-input {
             background-color: transparent;
-            border: 1px solid #ccc;
+            border: 2px solid rgba(257, 257, 257, 0.4);
             color: white;
             padding: 8px;
             opacity: 0.7;
+            border-radius: 24px;
+
         }
 
-        /* Style tambahan untuk menunjukkan elemen input saat dihover */
         .custom-date-input:hover {
-            border-color: #666;
-            /* Mengubah warna garis batas saat dihover */
+            border-color: white;
         }
     </style>
 
@@ -88,13 +96,14 @@
         <source src="{{ asset('dist/video/Data_Grid.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+
     <div class="container-fluid py-4">
-        <div class="row">
-            <div class="col-md-12 justify-content-center d-flex">
+        <div class="row justify-content-center d-flex">
+            <div class="col-md-6">
                 {{-- Profile --}}
                 <div class="card w-100 active" id="card1">
-                    <div class="card-header">
-                        <span class="fw-bold text-light"><i class="fas fa-user-circle fa-lg text-primary"></i>
+                    <div class="card-header ">
+                        <span class="fw-bold text-light"><i class="fas fa-user-circle fa-lg text-light"></i>
                             Profil</span>
                     </div>
                     <div class="card-body">
@@ -172,9 +181,9 @@
                 {{-- Pendidikan --}}
                 <div class="card w-100" id="card2">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <span class="fw-bold text-light"><i class="fas fa-school fa-lg text-primary"></i>
+                        <span class="fw-bold text-light"><i class="fas fa-school fa-lg text-light"></i>
                             Pendidikan</span>
-                        <button title="tambah" type="button" class="btn btn-sm btn-success text-end"
+                        <button title="tambah" type="button" class="btn btn-sm btn-dark me-5"
                             onclick="tambahPendidikan()"><i class="fas fa-plus-square"></i></button>
                     </div>
                     <div class="card-body">
@@ -210,9 +219,9 @@
                 {{-- Keahlian --}}
                 <div class="card w-100" id="card3">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <span class="fw-bold text-light"><i class="fas fa-tools fa-lg text-primary"></i>
+                        <span class="fw-bold text-light"><i class="fas fa-tools fa-lg text-light"></i>
                             Keahlian</span>
-                        <button title="Tambah" type="button" class="btn btn-sm btn-success text-end"
+                        <button title="Tambah" type="button" class="btn btn-sm btn-dark me-5"
                             onclick="tambahKeahlian()"><i class="fas fa-plus-square"></i></button>
                     </div>
                     <div class="card-body">
@@ -249,10 +258,10 @@
                 {{-- Pendidikan Nn-formal --}}
                 <div class="card w-100" id="card4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <span class="fw-bold text-light"><i class="fas fa-graduation-cap fa-lg text-primary"></i>
+                        <span class="fw-bold text-light"><i class="fas fa-graduation-cap fa-lg text-light"></i>
                             Pendidikan
                             Non-formal</span>
-                        <button title="Tambah" type="button" class="btn btn-sm btn-success text-end"
+                        <button title="Tambah" type="button" class="btn btn-sm btn-dark me-5"
                             onclick="tambahPendidikanNonFormal()"><i class="fas fa-plus-square"></i></button>
                     </div>
                     <div class="card-body">
@@ -292,11 +301,15 @@
                 {{-- Pengalaman --}}
                 <div class="card w-100" id="card5">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <span class="fw-bold text-light"><i class="fas fa-briefcase fa-lg text-primary"></i>
+                        <span class="fw-bold text-light"><i class="fas fa-briefcase fa-lg text-light"></i>
                             Pengalaman
                             Kerja</span>
-                        <button type="button" class="btn btn-sm btn-success text-end" onclick="tambahPengalaman()"><i
-                                class="fas fa-plus-square"></i></button>
+                        <div class="btn-group me-5">
+                            <button type="button" class="btn btn-sm btn-dark rounded me-2" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"><i class="fas fa-eye"></i></button>
+                            <button type="button" class="btn btn-sm btn-dark rounded" onclick="tambahPengalaman()"><i
+                                    class="fas fa-plus-square"></i></button>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="pengalaman-container">
@@ -340,20 +353,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="mt-2 d-flex justify-content-between">
+                    <button class="btn btn-dark" onclick="prevCard()" id="prevBtn" disabled><i
+                            class="fas fa-angle-double-left"></i> Back</button>
+                    <button class="btn btn-dark ml-2" onclick="nextCard()" id="nextBtn">Next <i
+                            class="fas fa-angle-double-right"></i></button>
+                </div>
             </div>
-        </div>
-        <div class="mt-2 d-flex justify-content-between">
-            <button class="btn btn-dark" onclick="prevCard()" id="prevBtn" disabled><i
-                    class="fas fa-angle-double-left"></i> Back</button>
-            <button class="btn btn-dark ml-2" onclick="nextCard()" id="nextBtn">Next <i
-                    class="fas fa-angle-double-right"></i></button>
         </div>
     </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Curriculum Vitae</h1>

@@ -9,7 +9,11 @@
     {{-- Custume CSS --}}
     <link rel="stylesheet" href="{{ asset('dist/css/style.css') }}">
 
+    {{-- Fontawesome CSS --}}
     <link rel="stylesheet" href="{{ asset('dist/fontawesome-free/css/all.min.css') }}" />
+
+    {{-- Hover CSS --}}
+    <link rel="stylesheet" href="{{ asset('dist/css/hover.css') }}">
 
     <!-- Bootstrap CSS -->
     <link href="{{ asset('dist/css/bootstrap.min.css') }}" rel="stylesheet">

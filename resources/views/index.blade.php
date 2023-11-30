@@ -1,15 +1,24 @@
 @extends('layouts.index')
 @section('content')
     <style>
+        .container-card:hover {
+            backdrop-filter: blur(5px);
+
+        }
+
+        .btn {
+            border-radius: 10px 50px 10px 50px;
+        }
+
         .container-card {
             position: relative;
             height: 460px;
             width: 460px;
             background: transparent;
             /* Ubah nilai alpha untuk transparansi */
-            border-radius: 24px;
+            border-radius: 20px 90px 20px 90px;
             border: 2px solid rgba(257, 257, 257, 0.4);
-            backdrop-filter: blur(15px) opacity(0.8);
+            backdrop-filter: blur(3px);
             box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
             display: flex;
             align-items: center;
