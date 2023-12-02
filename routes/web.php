@@ -18,4 +18,4 @@ Route::get('/', function () {
         'title' => 'Curriculum Vitae'
     ]);
 });
-Route::get('/memuat-cv', 'App\Http\Controllers\CvController@create')->name('create-cv');
+Route::get('/Create CV', 'App\Http\Controllers\CvController@create')->name('create-cv');
